@@ -2,6 +2,8 @@
 //  Typography
 //  _____________________________________________
 
+@use "sass:math";
+
 @mixin lib-font-face(
     $family-name,
     $font-path,
@@ -256,7 +258,7 @@
     $_root-font-size        : $root__font-size,
     $_small-font-size       : $font-size__s,
     $_strong-font-weight    : $font-weight__bold,
-    $_sub-sup-font-size     : ($font-size__xs / $font-size__base) * 100%
+    $_sub-sup-font-size     : math.div($font-size__xs, $font-size__base) * 100%
 ) {
     html {
         @include lib-css(font-size, $_root-font-size);

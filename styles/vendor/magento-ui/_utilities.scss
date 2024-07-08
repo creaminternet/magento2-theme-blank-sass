@@ -6,9 +6,11 @@
 // @param {Number} $number - Number to remove unit from
 // @return {Number} - Unitless number
 
+@use "sass:math";
+
 @function strip-unit($number) {
     @if type-of($number) == 'number' and not unitless($number) {
-        @return $number / ($number * 0 + 1);
+        @return math.div($number, $number * 0 + 1);
     }
 
     @return $number;
@@ -21,7 +23,7 @@
 @function lib-font-size-value($_value) {
     @if $font-size-unit-convert {
         @if $_value != false and $_value != '' {
-            $_value: strip-unit($_value) / $font-size-unit-ratio;
+            $_value: math.div(strip-unit($_value), $font-size-unit-ratio);
             @if $_value > 0 {
                 $_value: $_value * 1#{$font-size-unit};
             }

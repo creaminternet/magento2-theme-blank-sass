@@ -44,7 +44,7 @@
             width: 100%;
             @include fotorama-abs-center();
             .ie9 & {
-                margin: (-$fotorama-thumb-arrow / 2) 0 0 (-$fotorama-thumb-arrow / 2);
+                margin: (-$fotorama-thumb-arrow * 0.5) 0 0 (-$fotorama-thumb-arrow * 0.5);
             }
         }
 

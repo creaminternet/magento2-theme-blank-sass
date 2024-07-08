@@ -6,6 +6,8 @@
 //  Variables
 //  ---------------------------------------------
 
+@use "sass:math";
+
 $modal__background-color                         : $color-white !default;
 $modal__box-shadow                               : 0 0 12px 2px rgba(0, 0, 0, 0.35) !default;
 
@@ -205,7 +207,7 @@ body {
     }
 
     .modal-header {
-        @include lib-css(padding-bottom, $modal-popup__padding / 2.5);
+        @include lib-css(padding-bottom, math.div($modal-popup__padding, 2.5));
         @include lib-css(padding-top, $modal-popup__padding);
     }
 

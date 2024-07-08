@@ -80,7 +80,7 @@ $modal-slide-action-close__padding    : $modal-slide-header__padding-vertical - 
     }
 
     .page-main-actions {
-        margin-bottom: calc(#{$modal-slide-header__padding-vertical} - #{$indent__l / 2});
+        margin-bottom: calc(#{$modal-slide-header__padding-vertical} - #{$indent__l * 0.5});
         margin-top: $modal-slide-header__padding-vertical;
     }
 }

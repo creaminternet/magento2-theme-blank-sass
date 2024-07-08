@@ -87,7 +87,7 @@ $block-auth__border                     : 1px solid $color-gray-light3 !default;
             &::before {
                 @include lib-css(height, $block-auth__or-label__size);
                 @include lib-css(line-height, $block-auth__or-label__size - 2px);
-                @include lib-css(margin, -($block-auth__or-label__size/2 + 1px) 0 0 -($block-auth__or-label__size / 2));
+                @include lib-css(margin, -($block-auth__or-label__size*0.5 + 1px) 0 0 - ($block-auth__or-label__size * 0.5));
                 @include lib-css(min-width, $block-auth__or-label__size);
                 background: $color-white;
                 border: 1px solid $color-gray-light5;
