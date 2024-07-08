@@ -2,6 +2,8 @@
 //  Forms
 //  _____________________________________________
 
+@use "sass:math";
+
 @mixin lib-form-element-input(
     $_type                   : $form-element-input-type,
     $_background             : null,
@@ -1097,7 +1099,7 @@
 }
 
 @mixin lib-form-field-column-number($_column-number: $form-field-column__number) {
-    @include lib-css(width, 100% / $_column-number);
+    @include lib-css(width, math.div(100%, $_column-number));
 }
 
 @mixin _lib-revert-type-block-label-padding(

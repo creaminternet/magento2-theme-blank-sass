@@ -3,6 +3,8 @@
 //  _____________________________________________
 
 //  You shouldn't need to touch this! Internal use only.
+@use "sass:math";
+
 $column-width  : 1 !default;
 $total-columns : 1 !default;
 $gutter-width  : 1 !default;
@@ -160,7 +162,7 @@ $grid-width    : ($column-width * $total-columns) + ($gutter-width * ($total-col
     $span,
     $total-columns: $total-columns
 ) {
-    $calc-column-width: 100% * (((($gutter-width + $column-width) * $span)) / $grid-width);
+    $calc-column-width: 100% * math.div((($gutter-width + $column-width) * $span), $grid-width);
 
     @include lib-css(padding-left, $calc-column-width);
 }
@@ -169,7 +171,7 @@ $grid-width    : ($column-width * $total-columns) + ($gutter-width * ($total-col
     $span,
     $total-columns: $total-columns
 ) {
-    $calc-column-width: 100% * (((($gutter-width+$column-width) * $span)) / $grid-width);
+    $calc-column-width: 100% * math.div((($gutter-width+$column-width) * $span), $grid-width);
 
     @include lib-css(padding-right, $calc-column-width);
 }
@@ -178,7 +180,7 @@ $grid-width    : ($column-width * $total-columns) + ($gutter-width * ($total-col
     $span,
     $total-columns: $total-columns
 ) {
-    $calc-column-width: 100% * (((($gutter-width+$column-width) * $span)) / $grid-width);
+    $calc-column-width: 100% * math.div((($gutter-width+$column-width) * $span), $grid-width);
 
     @include lib-css(margin-left, $calc-column-width);
 }
@@ -187,7 +189,7 @@ $grid-width    : ($column-width * $total-columns) + ($gutter-width * ($total-col
     $span,
     $total-columns: $total-columns
 ) {
-    $calc-column-width: 100% * (((($gutter-width+$column-width) * $span)+$gutter-width) / $grid-width);
+    $calc-column-width: 100% * math.div((($gutter-width+$column-width) * $span)+$gutter-width, $grid-width);
 
     @include lib-css(margin-right, $calc-column-width);
 }
@@ -196,7 +198,7 @@ $grid-width    : ($column-width * $total-columns) + ($gutter-width * ($total-col
     $span,
     $total-columns: $total-columns
 ) {
-    $calc-column-width: 100% * (((($gutter-width+$column-width) * $span)) / $grid-width);
+    $calc-column-width: 100% * math.div((($gutter-width+$column-width) * $span), $grid-width);
 
     @include lib-css(margin-right, $calc-column-width);
 }
@@ -205,7 +207,7 @@ $grid-width    : ($column-width * $total-columns) + ($gutter-width * ($total-col
     $span,
     $total-columns: $total-columns
 ) {
-    $calc-column-width: 100% * (((($gutter-width+$column-width) * $span)-$gutter-width) / $grid-width);
+    $calc-column-width: 100% * math.div((($gutter-width+$column-width) * $span)-$gutter-width, $grid-width);
 
     @include lib-css(width, $calc-column-width);
 }
@@ -218,7 +220,7 @@ $grid-width    : ($column-width * $total-columns) + ($gutter-width * ($total-col
         margin-right: 0;
     }
     @else {
-        $calc-gutter-width: 100% * ($gutter-width / $grid-width);
+        $calc-gutter-width: 100% * math.div($gutter-width, $grid-width);
         @include lib-css(margin-right, $calc-gutter-width);
     }
 }

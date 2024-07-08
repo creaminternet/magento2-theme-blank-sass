@@ -7,6 +7,8 @@
 //  ---------------------------------------------
 
 //  Path
+@use "sass:math";
+
 $icons__font-path               : "../fonts/Blank-Theme-Icons/Blank-Theme-Icons" !default;
 
 //  Names
@@ -25,7 +27,7 @@ $root__font-size                : 62.5% !default; // Defines ratio between root 
 $font-size-ratio__base          : 1.4 !default; // Defines ratio of the root font-size to the base font-size
 
 $font-size-unit                 : rem !default; // The unit to which most typography values will be converted by default
-$font-size-unit-ratio           : $root__font-size * 16 / 100 / 1% !default; // Ratio of the root font-size to the font-size unit
+$font-size-unit-ratio           : math.div($root__font-size * 16 * 0.01, 1%) !default; // Ratio of the root font-size to the font-size unit
 $font-size-unit-convert         : true !default; // Controls whether font-size values are converted to the specified font-size unit
 
 $font-size__base                : $font-size-unit-ratio * $font-size-ratio__base * 1px !default; // Base font size value in px
@@ -65,8 +67,8 @@ $indent__base                   : $line-height__computed !default; // 20px
 $indent__xl                     : $indent__base * 2 !default; // 40px
 $indent__l                      : $indent__base * 1.5 !default; // 30px
 $indent__m                      : $indent__base * 1.25 !default; // 25px
-$indent__s                      : $indent__base / 2 !default; // 10px
-$indent__xs                     : $indent__base / 4 !default; // 5px
+$indent__s                      : $indent__base * 0.5 !default; // 10px
+$indent__xs                     : $indent__base * 0.25 !default; // 5px
 
 //
 //  Borders
@@ -196,7 +198,7 @@ $h6__margin-bottom              : $heading__margin-bottom__base !default;
 
 $heading__small-color           : $primary__color !default;
 $heading__small-line-height     : 1 !default;
-$heading__small-size            : ($font-size__xs / $font-size__base) * 100% !default;
+$heading__small-size            : math.div($font-size__xs, $font-size__base) * 100% !default;
 
 //  Code blocks
 $code__background-color         : $panel__background-color !default;

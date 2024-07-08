@@ -61,7 +61,7 @@ $braintree-paypal-account__padding-vertical : 15px !default;
                     padding-bottom: inherit;
                     padding-top: inherit;
                     position: absolute;
-                    right: -$distance / 2;
+                    right: -$distance * 0.5;
                     top: 5px;
                 }
             }
@@ -99,8 +99,8 @@ $braintree-paypal-account__padding-vertical : 15px !default;
     );
 
     &:before {
-        left: $braintree-paypal-account__padding-right / 2 - $braintree-paypal-icon__width / 2;
-        margin-top: -$braintree-paypal-icon__height / 2;
+        left: $braintree-paypal-account__padding-right * 0.5 - $braintree-paypal-icon__width * 0.5;
+        margin-top: -$braintree-paypal-icon__height * 0.5;
         position: absolute;
         top: 50%;
     }

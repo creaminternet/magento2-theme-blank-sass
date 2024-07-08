@@ -235,7 +235,7 @@ $form-field-type                                : block !default; // [inline|blo
 $form-field-type-revert                         : inline !default; // [inline|block|false]
 $form-field__border                             : false !default;
 $form-field__vertical-indent                    : $indent__base !default;
-$form-field__additional-vertical-indent         : $form-field__vertical-indent / 2 !default;
+$form-field__additional-vertical-indent         : $form-field__vertical-indent * 0.5 !default;
 $form-field-type-block__margin                  : 0 0 $form-field__vertical-indent !default;
 $form-field-type-inline__margin                 : 0 0 $form-field__vertical-indent !default;
 
