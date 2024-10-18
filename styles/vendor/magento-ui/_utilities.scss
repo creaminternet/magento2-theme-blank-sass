@@ -25,7 +25,7 @@
         @if $_value != false and $_value != '' {
             $_value: math.div(strip-unit($_value), $font-size-unit-ratio);
             @if $_value > 0 {
-                $_value: $_value * 1#{$font-size-unit};
+                $_value: #{$_value * 1}#{$font-size-unit};
             }
             @return $_value;
         }
